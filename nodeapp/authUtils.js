@@ -3,14 +3,23 @@ const jwt = require('jsonwebtoken');
 const JWT_SECRET = 'skillforge_secret_key';
 
 const generateToken = (userId) => {
-  return jwt.sign({ _id: userId }, JWT_SECRET);
+  return jwt.sign(
+    { _id: userId }, 
+     JWT_SECRET,
+    { expiresIn: '24h' } 
+  );
 };
 
 const validateToken = (req, res, next) => {
   try {
-    const token = req.header('Authorization');
+    let token = req.header('Authorization');
     if (!token) {
       return res.status(400).json({ message: 'Authentication failed' });
+    }
+    
+    // Handle Bearer token format
+    if (token.startsWith('Bearer ')) {
+      token = token.slice(7);
     }
     
     const decoded = jwt.verify(token, JWT_SECRET);
@@ -22,3 +31,4 @@ const validateToken = (req, res, next) => {
 };
 
 module.exports = { generateToken, validateToken };
+
