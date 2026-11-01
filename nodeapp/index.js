@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -6,7 +7,6 @@ const learningModuleRouter = require('./routers/learningModuleRouter');
 
 const app = express();
 
-// CORS configuration
 app.use(cors({
   origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -15,16 +15,14 @@ app.use(cors({
 
 app.use(express.json());
 
-// Database connection
-mongoose.connect('mongodb+srv://vishwarp06085_db_user:FProject123@cluster0.18beraj.mongodb.net/?appName=Cluster0')
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-// Routes
 app.use('/user', userRouter);
 app.use('/modules', learningModuleRouter);
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

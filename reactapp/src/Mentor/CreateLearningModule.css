@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+.page-label {
+  display: none;
+}
+
+.create-module-container {
+  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-module-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+}
+
+.create-module-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.back-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ffa726;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.back-button:hover {
+  background: #ff9800;
+}
+
+.create-module-title {
+  color: #d4851a;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.module-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  color: #d4851a;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.required {
+  color: #e74c3c;
+  margin-left: 5px;
+}
+
+.form-input, .form-select, .form-textarea {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-bottom: 2px solid #ffa726;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  background: white;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: #ffa726;
+  box-shadow: 0 0 0 2px rgba(255, 167, 38, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+.form-input.error, .form-select.error, .form-textarea.error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.hint-text {
+  color: #666;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.submit-button {
+  background: #ffa726;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background: #ff9800;
+}
+
+@media (max-width: 768px) {
+  .back-button {
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .create-module-container {
+    padding: 20px;
+  }
+  
+  .create-module-card {
+    padding: 30px;
+  }
+}

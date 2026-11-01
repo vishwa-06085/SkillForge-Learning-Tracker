@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+}
+
+.page-title {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-size: 3rem;
+  color: #888;
+  font-weight: 300;
+  margin: 0;
+}
+
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffa726 0%, #ff9800 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  position: relative;
+  z-index: 2;
+}
+
+.login-heading {
+  color: #d4851a;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.form-input:focus {
+  border-bottom-color: #ff9800;
+}
+
+.login-button {
+  width: 100%;
+  background: linear-gradient(135deg, #ffa726 0%, #ff9800 100%);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: transform 0.2s;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+}
+
+.signup-link {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.signup-link a {
+  color: #ff9800;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.brand-section {
+  position: absolute;
+  right: 120px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.brand-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.brand-tagline {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .brand-section {
+    display: none;
+  }
+  
+  .login-card {
+    width: 90%;
+    margin: 20px;
+  }
+}
